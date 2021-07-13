@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+$base-size: 16;
+$blue-color: #0070fb;
+$breakpoint-window: 1140px;
+$breakpoint-tablet: 868px;
+$breakpoint-600: 600px;
+$breakpoint-mobile: 375px;
+
+:root {
+  font-size: 16px;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 12px;
+  }
+}
+
+@function size($target, $context: $base-size) {
+  @return math.div($target, $context) * 1rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  --variable-top: 60px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fafafa;
+  -webkit-font-smoothing: antialiased;
+}
